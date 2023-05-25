@@ -1,6 +1,7 @@
 import LibConfig from '../../lib/LibConfig';
 import Crud from './Crud';
 import HttpCommon from '../../lib/HttpCommon';
+import LibCommon from '../../lib/LibCommon';
 //
 const CrudCreate = {
 
@@ -48,7 +49,13 @@ console.log(json);
         if(result === true) {
           window.location.href = '/plan';
         }
-      }); 
+      });
+      //
+      //p_date
+      const dt = LibCommon.formatDate(new Date(), 'YYYY-MM-DD')
+      const p_date: any = document.querySelector('#p_date');
+      p_date.value = dt;
+//console.log(dt);
     } catch (e) {
       console.error(e);
     }    

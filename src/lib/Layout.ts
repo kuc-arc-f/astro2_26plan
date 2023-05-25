@@ -16,9 +16,9 @@ const Layout = {
     const parsedUrl = new URL(window.location.href);
     if(!(parsedUrl.pathname === '/login' || parsedUrl.pathname === '/basic_login')) 
     {
-console.log("pathname=", parsedUrl.pathname);
+//console.log("pathname=", parsedUrl.pathname);
       const key = LibConfig.COOKIE_KEY_AUTH;
-console.log("key=", key);
+//console.log("key=", key);
       const auth = LibCookie.get_cookie(key);
       if(typeof auth === "undefined" || auth === null)
       {
