@@ -1,0 +1,41 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import LibCrud from '../../../lib/LibCrud';
+import CrudShow from '../CrudShow';
+//import { marked } from 'marked';
+//
+const { id } = Astro.params;
+console.log(id);
+let item: any = await CrudShow.get(Number(id));
+console.log(item);
+
+---
+
+<!-- -->
+<style>
+</style>
+
+<!-- MarkUp -->
+<Layout title="Welcome to Astro.">
+    <main class="container">
+        <a class="btn btn-outline-primary" href={`/plan`}>Back</a>
+        <hr />		
+        <h1>{item.p_date}</h1>
+        <hr />
+        <p>Id:{id}</p>
+        <hr />
+        <p>内容: {item.content}</p>
+        <!--
+        <p>内容: {item.content}</p>
+        -->
+        <hr />
+        <input type="hidden" value={id} id="item_id" />
+        <input type="hidden" value={item.content} id="item_content" />
+        <button id="btn_delete" class="btn btn-danger">Delete</button>
+    </main>
+</Layout>
+<!-- -->
+<script src="../CrudShow.ts"></script>
+
+<!--
+ -->

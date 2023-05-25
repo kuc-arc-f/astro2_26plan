@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LibCrud from '../../lib/LibCrud';
+//LibCommon
+
+export type Post = {
+  id: number;
+  name: string;
+};
+//
+//const items: Post[]  = await LibCrud.getList();
+//console.log(items);
+---
+
+<Layout title="Welcome to Astro.">
+    <main class="container">
+        <a href={`/plan`}>[ Back ]</a>
+        <hr />		
+        <h1>Create</h1>
+        <p class="instructions">
+        </p>
+        <hr />
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label class="col-sm-3 control-label">日付</label>
+                <div class="col-sm-6">
+                    <input type="date"  class="form-control" value="" id="p_date" name="p_date"                   
+                     required="required" />
+                </div>                
+            </div>             
+            <hr class="mt-2 mb-2" />
+            <div class="col-md-6 form-group">
+                <label for="content">内容</label>
+                <textarea id="content" name="content" required class="form-control"
+                rows="10" placeholder=""></textarea>
+            </div>
+        </div>	
+        <hr />
+        <button id="btn_save" class="btn btn-primary">Save
+        </button>
+    </main>
+</Layout>
+<!-- -->
+<style>
+</style>
+<!-- -->
+<script src="./CrudCreate.ts"></script>
+
+<!--
+ -->
