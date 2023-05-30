@@ -2,6 +2,7 @@ import LibConfig from '../../lib/LibConfig';
 import Crud from './Crud';
 import HttpCommon from '../../lib/HttpCommon';
 import LibCommon from '../../lib/LibCommon';
+import LibAuth from '../../lib/LibAuth';
 //
 const CrudCreate = {
 
@@ -16,9 +17,8 @@ const CrudCreate = {
     try{
       let ret = false;
       let values = Crud.getInputValues();
-      values.userId = 0;
-console.log(values);
-//return;
+      values.userId = LibAuth.getUserId();
+//console.log(values);
       const json = await HttpCommon.server_post(values, '/plan/create');
 console.log(json);
       if (json.ret ===  LibConfig.OK_CODE) {

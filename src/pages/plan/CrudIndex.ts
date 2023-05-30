@@ -1,6 +1,6 @@
-//import LibCrud from '../../lib/LibCrud';
 import LibConfig from '../../lib/LibConfig';
 import HttpCommon from '../../lib/HttpCommon';
+import LibAuth from '../../lib/LibAuth';
 import moment from 'moment'
 //
 const CrudIndex = {
@@ -20,9 +20,10 @@ const CrudIndex = {
       const end_str = end.format("YYYY-MM-DD HH:mm:ss")
       const postItem = {
         "start": start_str,
-        "end": end_str
+        "end": end_str,
+        "userId": LibAuth.getUserId()
       }
-//console.log(postItem);
+console.log(postItem);
       const json = await HttpCommon.server_post(postItem, "/plan/get_list");
 //console.log(json);      
       let items: any[] = [];

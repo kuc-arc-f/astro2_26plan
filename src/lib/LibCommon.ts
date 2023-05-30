@@ -1,6 +1,24 @@
-
+import moment from 'moment';
 //LibCommon
 const LibCommon = {
+    /**
+     *converDateString
+     * @param
+     *
+     * @return
+     */     
+    converDateString: function(value: any){
+        try{
+          let ret = "";
+//          let dtObj = new Date(Number(value));
+          let dt = moment(value);      
+          ret = dt.format("YYYY-MM-DD");
+          return ret;
+        } catch (e) {
+          console.log(e);
+          throw new Error('error, converDateString');
+        }
+    },    
     /**
      * convert date format 
      * @param

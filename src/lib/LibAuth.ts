@@ -1,5 +1,6 @@
 import LibDbSession from './LibDbSession';
 import LibConfig from './LibConfig';
+import LibCookie from './LibCookie';
 //
 const LibAuth = {
   /**
@@ -19,6 +20,27 @@ const LibAuth = {
       }
       ret = true;
       return ret;
+    } catch (e) {
+      console.error(e);
+    }
+  },
+  /**
+   *
+   * @param
+   *
+   * @return
+   */
+  getUserId: function(): any
+  {
+    try {
+      let ret = null;
+      const key = LibConfig.COOKIE_KEY_AUTH;
+      const auth = LibCookie.get_cookie(key);
+      if(!auth) {
+        throw new Error('Error , user cookie nothing.');
+      } 
+      ret = Number(auth); 
+      return ret;    
     } catch (e) {
       console.error(e);
     }

@@ -4,12 +4,12 @@ const LibConfig = {
   NG_CODE: 'NG',  
   //
   SQLITE_FILE_PATH: "/app.sqlite",
-  STORAGE_KEY_DB: 'sqlite_db_astro26' ,
+  STORAGE_KEY_DB: 'sqlite_db_astro28' ,
 
   //session_key
   SESSION_KEY_USER: "user",
   //cookie
-  COOKIE_KEY_AUTH: "astro26_user_auth",  
-  COOKIE_KEY_SESSION: "astro26_session",  
+  COOKIE_KEY_AUTH: "astro28_user_auth",  
+  COOKIE_KEY_SESSION: "astro28_session",  
 }
 export default LibConfig;
